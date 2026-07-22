@@ -10,8 +10,16 @@ dns.setServers(['1.1.1.1', '8.8.8.8']);
 const app = express();
 
 
+// app.use(cors({
+//   origin: 'http://localhost:5173',
+//   credentials: true,
+// }));
+
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: [
+    'http://localhost:5173',
+    'https://spotify-frontend-three-lime.vercel.app', // your real Vercel URL, no trailing slash
+  ],
   credentials: true,
 }));
 
