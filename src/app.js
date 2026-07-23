@@ -17,11 +17,13 @@ const app = express();
 
 app.use(cors({
   origin: [
-    'http://localhost:5173',
-    'https://spotify-frontend-three-lime.vercel.app', // your real Vercel URL, no trailing slash
+    "http://localhost:5173",
+    "https://spotify-frontend-three-lime.vercel.app",
+    "https://spotify-frontend-rohit-dev1.vercel.app",
   ],
   credentials: true,
 }));
+
 
 
 app.use(express.json());
