@@ -5,13 +5,13 @@ const authMiddleware = require("../middlewares/auth.middleware")
 const router = express.Router();
 
 
-router.post("/", authMiddleware.authAny, playlistController.createPlaylist)
+router.post("/", authMiddleware.authUser, playlistController.createPlaylist)
 
-router.get("/", authMiddleware.authAny, playlistController.getMyPlaylists)
+router.get("/", authMiddleware.authUser, playlistController.getMyPlaylists)
 
-router.get("/:playlistId", authMiddleware.authAny, playlistController.getPlaylistById)
+router.get("/:playlistId", authMiddleware.authUser, playlistController.getPlaylistById)
 
-router.post("/:playlistId/tracks", authMiddleware.authAny, playlistController.addTrackToPlaylist)
+router.post("/:playlistId/tracks", authMiddleware.authUser, playlistController.addTrackToPlaylist)
 
 
 module.exports = router;
